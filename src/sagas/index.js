@@ -8,7 +8,8 @@
 // effects in sagas or utility functions used by sagas.
 //
 // https://yelouafi.github.io/redux-saga/
-import createSagaMiddleware, { takeEvery } from 'redux-saga';
+import createSagaMiddleware from 'redux-saga';
+import { takeEvery } from 'redux-saga/effects';
 import dataSagas from './data';
 
 // Saga middleware

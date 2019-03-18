@@ -13,7 +13,7 @@ let createStoreWithMiddleware;
 export default (initialState) => {
     if (process.env.NODE_ENV === 'production') {
         createStoreWithMiddleware = applyMiddleware(sagaMiddleware)(createStore);
-    } else {
+    } else   {
         createStoreWithMiddleware = applyMiddleware(sagaMiddleware, logger)(createStore);
     }
 

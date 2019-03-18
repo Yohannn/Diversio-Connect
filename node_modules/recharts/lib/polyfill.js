@@ -1,6 +1,8 @@
-'use strict';
+"use strict";
 
-require('core-js/es6/math');
+require("core-js/es6/math");
+
+require("core-js/es6/number");
 
 /* eslint no-proto: 0 */
 var testObject = {};

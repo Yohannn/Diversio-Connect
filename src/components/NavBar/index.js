@@ -12,12 +12,24 @@ const NavBar = (props) => {
         <div className="NavBar" id="navbar">
             <img src={ logo } className="navbar_logo" alt="Diversio Global"/>
             <ul className="navbar_list">
-                <li className={ classNames({ selected: path === '/' }) }><Link to="/">Home</Link></li>
-                <li className={ classNames({ selected: path === '/analyze' }) }><Link to="/analyze">Analyze</Link></li>
-                <li className={ classNames({ selected: path === '/improve' }) }><Link to="/improve">Improve</Link></li>
-                <li className={ classNames({ selected: path === '/leverage' }) }><Link to="/leverage">Leverage</Link></li>
-                <li className={ classNames({ selected: path === '/connect' }) }><Link to="/connect">Connect</Link></li>
-                <li className={ classNames({ selected: path === '/learn-more' }) }><Link to="/learn-more">Learn More</Link></li>
+                <li className={ classNames({ selected: path === '/' }) }>
+                    <Link to="/">Home</Link>
+                </li>
+                <li className={ classNames({ selected: path === '/analyze' }) }>
+                    <Link to="/analyze">Analyze</Link>
+                </li>
+                <li className={ classNames({ selected: path === '/improve' }) }>
+                    <Link to="/improve">Improve</Link>
+                </li>
+                <li className={ classNames({ selected: path === '/leverage' }) }>
+                    <Link to="/leverage">Leverage</Link>
+                </li>
+                <li className={ classNames({ selected: path === '/connect' }) }>
+                    <Link to="/connect">Connect</Link>
+                </li>
+                <li className={ classNames({ selected: path === '/learn-more' }) }>
+                    <Link to="/learn-more">Learn More</Link>
+                </li>
             </ul>
             <div className="navbar_signout-container">
                 <img src={ signout } alt=""/>
@@ -28,3 +40,4 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
+

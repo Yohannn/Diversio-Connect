@@ -1,11 +1,13 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import Dashboard from './containers/Dashboard';
+import Dashboard from './components/Dashboard/';
 
-export default function App ({ routes, store }) {
+const App = ({ routes, store }) => {
     return (
         <Provider store = { store }>
             <Dashboard />
         </Provider>
-    );
+    ); 
 }
+
+export default App;
