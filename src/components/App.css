@@ -1,5 +1,5 @@
 html, body {
-  background-color: #FAFBFC;
+  background-color: #FAFBFC !important;
 }
 
 .App {
@@ -29,4 +29,14 @@ html, body {
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
+}
+
+.content-container {
+  /* background-color: transparent; */
+  margin-left: 255px;
+  padding: 40px;
+}
+
+li {
+  list-style-type: none;
 }

@@ -1,7 +1,6 @@
 .topBar{
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+  
+  /* align-items: center; */
   margin-left: 80px;
   margin-right: 110px;
   margin-top: 40px;
@@ -35,6 +34,3 @@
   background-color: #DBD9DB;
 }
 
-li {
-  list-style-type: none;
-}

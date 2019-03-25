@@ -1,20 +1,41 @@
-/**
- * Reducers output the Redux state (models) for the app. They do not alter the
- * existing state, but generate modified state objects from the old state in
- * response to actions.
- *
- * http://redux.js.org/docs/basics/Reducers.html
- *
- **/
 import { combineReducers } from 'redux';
-import app from './app';
+// import { reducer as formReducer } from 'redux-form';
+import pilotsReducer from './pilotsReducer';
 
-/*
- * Reducer aggregator
- */
 export default combineReducers({
-    /*
-     * Populate reducers
-     */
-    app
+  
+    pilots: pilotsReducer 
+    
+    // form: formReducer
 });
+
+
+
+// const defaultState = {
+//     inTraffic: false,
+//     isInitialized: false
+// };
+
+
+// export default (state = defaultState, action) => {
+//     try {
+
+//         switch(action.type) {
+
+//             case 'TESTING':
+//                 console.log('Im here')
+//                 return {
+//                     ...state,
+//                     inTraffic: true
+//                 };
+
+//             default:
+//                 return state;
+
+//         }
+
+//     } catch(error) {
+//         console.error(`Error in appState reducer: ${ error.message || error.code || error }`, error);
+//     }
+
+// };

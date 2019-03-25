@@ -24,11 +24,11 @@ const NavBar = (props) => {
                 <li className={ classNames({ selected: path === '/leverage' }) }>
                     <Link to="/leverage">Leverage</Link>
                 </li>
-                <li className={ classNames({ selected: path === '/connect' }) }>
-                    <Link to="/connect">Connect</Link>
-                </li>
                 <li className={ classNames({ selected: path === '/learn-more' }) }>
                     <Link to="/learn-more">Learn More</Link>
+                </li>
+                <li className={ classNames({ selected: path.startsWith('/connect') }) }>
+                    <Link to="/connect/pilots">Connect</Link>
                 </li>
             </ul>
             <div className="navbar_signout-container">

@@ -1,12 +1,7 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Actions } from '../../actions';
-// import './App.css';
 
 class Analyze extends Component {
-    componentDidMount () {
-        this.props.initializeApp()
-    }
+    
     render() {
         return (
             <div className="App">
@@ -16,8 +11,4 @@ class Analyze extends Component {
     }
 }
 
-const mapStateToProps = state => {
-    return state;
-};
-
-export default connect(mapStateToProps, Actions)(Analyze);
+export default Analyze;
