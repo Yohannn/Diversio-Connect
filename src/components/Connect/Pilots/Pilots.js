@@ -1,17 +1,66 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 import ConnectWrapper from '../ConnectWrapper';
-import { stringToColour, obtainLastSegment } from '../../../utils';
+import { stringToColour } from '../../../utils';
 import { fetchPilotProjects } from '../../../actions';
 
 import { Container, Row, Col } from 'reactstrap';
 import Slider from 'rc-slider';
 
-import './Pilots.css'
+import { Card, SubHeader } from '../../GlobalStyle';
+
+import styled from 'styled-components';
 import 'rc-slider/assets/index.css';
 
+//styled components:
+const PilotProject = styled.div`
+    margin-bottom: 80px;
+`
 
+const LearnMoreLink = styled.a`
+    text-decoration: none;
+    color: #5E77FF;	
+    font-family: Lato;	
+    font-size: 14px;	
+    font-weight: 500;	
+    line-height: 15px;
+`
+
+const StyledRow = styled(Row)`
+    padding-top: 15px;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+`
+
+const CompanyNameTag = styled.span`
+    background-color: ${props => stringToColour(props.companyName)};
+    padding: 6px 14px 6px 14px;
+    font-size: 10px;
+    color: white;
+    height: 25px;	
+    width: 78px;	
+    border-radius: 4px;	
+    white-space: nowrap;
+`
+
+const ButtonLink = styled.a`
+    background-color:#5E77FF;;
+    border: none;
+    color: white !important;
+    padding: 7px 18px 7px 18px;
+    text-align: center;
+    font-size: 10px;
+    border-radius: 14px; 
+    white-space: nowrap;
+
+    &:hover{
+        text-decoration: none;
+    }
+`
+
+// React component:
 const marks = {
     25: 'Pre-launch',
     50: 'Launch',
@@ -19,7 +68,7 @@ const marks = {
     100: 'Impact',
   };
 
-  const marks_reverse = {
+const marks_reverse = {
     'default': 0,
     'pre-launch': 25,
     'launch': 50,
@@ -30,23 +79,24 @@ const marks = {
 
 class Pilots extends Component {
     
+    state = { appName: "pilots" }
+
     componentDidMount(){
         this.props.fetchPilotProjects();
     }
 
-
     renderProgressTracker(project) {
         return (
-            <div className="pilot">
-                <div className="title">{project.title}</div>
-                <a className="learnMore" href="https://google.com">Learn More ></a>
-                    <Row className="align-items-center justify-content-between">
-                        <Col className="text-left" sm="2">
-                            <span style={{backgroundColor: `${stringToColour(project.title)}`}} className="companyRectangle">
+            <PilotProject>
+                <SubHeader>{project.title}</SubHeader>
+                <LearnMoreLink href="https://google.com">Learn More ></LearnMoreLink>
+                    <StyledRow>
+                        <Col sm="2">
+                            <CompanyNameTag companyName={project.companyName} >
                                 {project.companyName}
-                            </span>
+                            </CompanyNameTag>
                         </Col>
-                        <Col className="center">
+                        <Col>
                             <Slider 
                                 dots
                                 dotStyle={{ backgroundColor: 'transparent'}}
@@ -61,20 +111,19 @@ class Pilots extends Component {
                             />
                         </Col>
                         <Col className="text-right" sm="2" >
-                            <a href="https://google.com" target="_blank">
-                                  <span className="caseButton">Case Study</span>
-                            </a>
+                            <ButtonLink href="https://google.com" target="black">
+                                Case Study
+                            </ButtonLink>
                         </Col>
-                    </Row>
-            </div>
+                    </StyledRow>
+            </PilotProject>
         )
     }
 
     render() {
-        const appName = obtainLastSegment(this.props.match.path)
         return (
-            <ConnectWrapper title={appName}>
-                <div className="card">
+            <ConnectWrapper title={this.state.appName}>
+                <Card>
                     <Container fluid>
                         {this.props.projects.map((project) => {
                             return (
@@ -84,10 +133,9 @@ class Pilots extends Component {
                             )
                         })}
                     </Container>
-                </div>
+                </Card>
             </ConnectWrapper>
         )
-        
     }
 };
 

@@ -20,7 +20,36 @@ export const obtainLastSegment = (url) => {
   return url.substr(url.lastIndexOf('/') + 1);
 }
 
-export const capitalizeFirstChar = (word) => {
-  return word.charAt(0).toUpperCase() + word.substring(1);
+// Returns color for each kpi.
+export const kpi_color = (kpi) => {
+	let color;
+	switch(kpi){
+		case "CULTURE":
+			color = "purple";
+			break;
+		case "NETWORKS":
+			color = "gold";
+			break;
+		case "BIAS":
+			color = "darkolivegreen";
+			break;
+		case "SAFETY":
+			color = "orange";
+			break;
+		case "LEADERSHIP":
+			color = "slategray";
+			break;
+		case "RECRUITING":
+			color = "#53A8E2";
+			break;
+		case "PAY EQUITY":
+			color = "lemonchiffon";
+			break;
+		case "LEADERSHIP & ACCOUNTABILITY":
+			color = "plum";
+			break;
+		default:
+			color = "#" + Math.random().toString(16).slice(2, 8).toUpperCase();
+	}
+	return color;
 }
-

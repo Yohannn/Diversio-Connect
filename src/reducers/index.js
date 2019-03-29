@@ -1,14 +1,14 @@
 import { combineReducers } from 'redux';
 // import { reducer as formReducer } from 'redux-form';
 import pilotsReducer from './pilotsReducer';
+import topicsReducer from './topicsReducer';
 
 export default combineReducers({
   
-    pilots: pilotsReducer 
-    
+    pilots: pilotsReducer,
+    topics: topicsReducer
     // form: formReducer
 });
-
 
 
 // const defaultState = {

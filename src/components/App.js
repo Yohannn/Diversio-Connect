@@ -1,10 +1,14 @@
 import React from 'react';
 import Dashboard from './Dashboard';
-import './App.css';
+import GlobalStyle from './GlobalStyle';
+
 
 const App = () => {
     return (
-            <Dashboard />
+            <React.Fragment>
+                <GlobalStyle />
+                <Dashboard />
+            </React.Fragment>
     ); 
 }
 

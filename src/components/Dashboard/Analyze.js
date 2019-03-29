@@ -4,7 +4,7 @@ class Analyze extends Component {
     
     render() {
         return (
-            <div className="App">
+            <div>
                 Welcome to Analyze
             </div>
         );

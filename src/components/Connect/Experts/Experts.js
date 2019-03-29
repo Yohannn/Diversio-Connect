@@ -1,18 +1,18 @@
 import React, { Component } from 'react';
 import ConnectWrapper from '../ConnectWrapper';
-import { obtainLastSegment } from '../../../utils';
-
-// import './Topics.css';
+import { Card } from '../../GlobalStyle';
 
 class Experts extends Component {
+
+    state = { appName: "experts" } 
+
     render () {
-        const appName = obtainLastSegment(this.props.match.path)
 
         return (
-            <ConnectWrapper title={appName}>
-                <div className="card">
+            <ConnectWrapper title={this.state.appName}>
+                <Card>
                     This is Experts Page.
-                </div>
+                </Card>
             </ConnectWrapper>
         )
     }
