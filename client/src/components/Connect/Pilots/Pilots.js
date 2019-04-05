@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import ConnectWrapper from '../ConnectWrapper';
 import { stringToColour } from '../../../utils';
-import { fetchPilotProjects } from '../../../actions';
+import { fetchPilotsProjects } from '../../../actions';
 
 import { Container, Row, Col } from 'reactstrap';
 import Slider from 'rc-slider';
@@ -82,7 +82,7 @@ class Pilots extends Component {
     state = { appName: "pilots" }
 
     componentDidMount(){
-        this.props.fetchPilotProjects();
+        this.props.fetchPilotsProjects();
     }
 
     renderProgressTracker(project) {
@@ -121,6 +121,11 @@ class Pilots extends Component {
     }
 
     render() {
+        // Waiting for data to be fetched.
+        if (this.props.projects.length === 0) {
+            return ( <div>Loading...</div>)
+        }
+
         return (
             <ConnectWrapper title={this.state.appName}>
                 <Card>
@@ -145,5 +150,5 @@ const mapStateToProps = (state) => {
 }
 
 export default connect(mapStateToProps, {
-    fetchPilotProjects
+    fetchPilotsProjects
 })(Pilots);

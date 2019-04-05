@@ -79,8 +79,7 @@ const pathIsStartedBy = (currPathName) => {
 }
 
 const NavBar = () => {
-    const path = window.location.pathname;
-    
+        
     return (
         <NavBarContainer>
             <NavbarLogo src={ logo } alt="Diversio global" />

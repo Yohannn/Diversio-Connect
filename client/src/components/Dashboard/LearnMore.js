@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class Analyze extends Component {
+class LearnMore extends Component {
     
     render() {
         return (
             <div>
-                This is Analyze, please check Connect.
+                This is LearnMore, please check Connect.
             </div>
         );
     }
 }
 
-export default Analyze;
+export default LearnMore;

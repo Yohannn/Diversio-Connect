@@ -3,12 +3,13 @@ import React from 'react';
 import { kpi_color } from '../../../utils';
 
 import styled from 'styled-components';
+
 import { 
-    QuestionTitle, 
-    QuestionContent, 
-    QuestionKpi 
-} from './Topics';
-import { Separator } from '../../GlobalStyle';
+    Separator, 
+    BoldTitle, 
+    GrayContent, 
+    KpiTag  
+} from '../../GlobalStyle';
 
 // styled components:
 const StyledQuestion = styled.div`
@@ -17,7 +18,7 @@ const StyledQuestion = styled.div`
 
 const TagSeparator = styled(Separator)`
     margin: 0px 8px;
-    height: 12px;
+    height: 8px;
     display: inline-block;
 `
 const AnswerTag  = styled.span`
@@ -36,16 +37,16 @@ const Discover = (props) => {
             {props.questions.map((question) => {
                 return (
                     <StyledQuestion key={question.id}>
-                        <QuestionTitle>{question.title}</QuestionTitle>
-                        <QuestionContent>{question.body}</QuestionContent>
+                        <BoldTitle>{question.title}</BoldTitle>
+                        <GrayContent>{question.body}</GrayContent>
                         <AnswerTag>
                             {props.answers.filter((answer) => 
-                                answer.questionId == question.id).length} answers
+                                answer.questionId === question.id).length} answers
                         </AnswerTag>
                         <TagSeparator/>
-                        <QuestionKpi color={kpi_color(question.kpi)}>
+                        <KpiTag color={kpi_color(question.kpi)}>
                             {question.kpi}
-                        </QuestionKpi>
+                        </KpiTag>
 
                     </StyledQuestion>
                 )

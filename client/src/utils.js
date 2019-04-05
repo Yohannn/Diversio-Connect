@@ -1,5 +1,14 @@
+import _ from 'lodash';
+
+// List of viable KPIs.
+export const KPIs = [
+	"CULTURE", "NEWORKS", "BIAS", 
+	"SAFETY", "LEADERSHIP", "RECRUITING", 
+	"PAY EQUITY", "ACCOUNTABILITY"
+]
+
 // Give 6 hex digits color code given any string of characters
-// so that strings of same characters are coded to same color.
+// so that strings of same characters are coded to same color - case sensitive.
 export const stringToColour = (str) => {
     let hash = 0;
     for (let i = 0; i < str.length; i++) {
@@ -23,33 +32,74 @@ export const obtainLastSegment = (url) => {
 // Returns color for each kpi.
 export const kpi_color = (kpi) => {
 	let color;
-	switch(kpi){
-		case "CULTURE":
+	const lower_kpi = kpi.toLowerCase();
+	switch(lower_kpi){
+		case "culture":
 			color = "purple";
 			break;
-		case "NETWORKS":
+		case "networks":
 			color = "gold";
 			break;
-		case "BIAS":
+		case "bias":
 			color = "darkolivegreen";
 			break;
-		case "SAFETY":
+		case "safety":
 			color = "orange";
 			break;
-		case "LEADERSHIP":
+		case "leadership":
 			color = "slategray";
 			break;
-		case "RECRUITING":
+		case "recruiting":
 			color = "#53A8E2";
 			break;
-		case "PAY EQUITY":
+		case "pay equity":
 			color = "lemonchiffon";
 			break;
-		case "LEADERSHIP & ACCOUNTABILITY":
+		case "accountability":
 			color = "plum";
 			break;
 		default:
-			color = "#" + Math.random().toString(16).slice(2, 8).toUpperCase();
+			color = stringToColour(kpi);
 	}
 	return color;
+}
+
+// Returns color for each kpi.
+export const topic_color = (topic) => {
+	let color;
+	const lower_topic = topic.toLowerCase();
+	switch(topic){
+		case "culture":
+			color = "#E7EBFD";
+			break;
+		case "networks":
+			color = "#DCEEC4";
+			break;
+		case "bias":
+			color = "#C9E3F4";
+			break;
+		case "safety":
+			color = "#F4D49F";
+			break;
+		case "leadership":
+			color = "#F6F1B1";
+			break;
+		case "recruiting":
+			color = "#D4F3EE";
+			break;
+		case "pay equity":
+			color = "lemonchiffon";
+			break;
+		case "accountability":
+			color = "plum";
+			break;
+		default:
+			color = stringToColour(topic);
+	}
+	return color;
+}
+
+// randomly return one of KPIs.
+export const kpi_random = () => {
+	return _.sample(KPIs);
 }

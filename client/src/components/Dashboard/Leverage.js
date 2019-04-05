@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 
-class Analyze extends Component {
+class Leverage extends Component {
     
     render() {
         return (
             <div>
-                This is Analyze, please check Connect.
+                This is Leverage, please check Connect.
             </div>
         );
     }
 }
 
-export default Analyze;
+export default Leverage;

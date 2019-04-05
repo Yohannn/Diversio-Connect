@@ -23,7 +23,7 @@ const store = createStore(
 
 sagaMiddleware.run(rootSaga)
 
-const action = type => store.dispatch({type})
+// const action = type => store.dispatch({type})
 
 // Render to DOM.
 ReactDOM.render(

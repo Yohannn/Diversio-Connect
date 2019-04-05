@@ -7,10 +7,13 @@ import TopicsTab from './TopicsTab';
 import Discover from './Discover';
 import Answer from './Answer';
 
-import { fetchTopicQuestions, fetchTopicAnswers } from '../../../actions';
+import { fetchTopicsQuestions, fetchTopicsAnswers } from '../../../actions';
 
 import styled from 'styled-components';
-import { Card, SubHeader } from '../../GlobalStyle';
+import { 
+    Card, SubHeader, 
+    BoldTitle, GrayContent, 
+    KpiTag } from '../../GlobalStyle';
 import { kpi_color } from '../../../utils';
 
 
@@ -20,69 +23,27 @@ const FeaturedQuestion = styled.div`
     margin-bottom: 40px;
 `
 
-export const QuestionTitle = styled.div`
-    height: 23px;	
-    color: #2A2C2E;	
-    font-family: Lato;	
-    font-size: 16px;	
-    font-weight: bold;	
-    line-height: 23px;
-    /* margin-top: 20px; */
-`
-
-export const QuestionContent = styled.div`
-    /* height: 30px;	 */
-    /* max-width: 400px;	 */
-    width: 100%;
-    color: #2A2C2E;	
-    font-family: Lato;	
-    font-size: 0.8rem;	
-    font-weight: 300;	
-    margin-top: 6px;
-    padding-bottom: 5px;
-    
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-`
-
-export const QuestionKpi = styled.span`
-    color : ${({ color }) => color};
-    height: 20px;	
-    width: 100%;	
-    font-family: Lato;	
-    font-size: 10px;	
-    line-height: 20px;
-    
-    /* margin-top: 8px; */
-`
-
-
 // React components:
 class Topics extends Component {
     
     state = { appName: "topics" }
 
     componentDidMount() {
-        this.props.fetchTopicQuestions();
-        this.props.fetchTopicAnswers();
+        this.props.fetchTopicsQuestions();
+        this.props.fetchTopicsAnswers();
     }
 
     renderFeaturedQuestion() {
-        // Featured question not fetched yet.
-        if (!this.props.featured) {
-            return ( <div>Loading...</div>)
-        }
-
+        
         return (
             <React.Fragment>
                 <SubHeader>Featured</SubHeader>
                 <FeaturedQuestion>
-                    <QuestionTitle>{this.props.featured.title}</QuestionTitle>
-                    <QuestionContent>{this.props.featured.body}</QuestionContent>
-                    <QuestionKpi color={kpi_color(this.props.featured.kpi)}>
+                    <BoldTitle>{this.props.featured.title}</BoldTitle>
+                    <GrayContent>{this.props.featured.body}</GrayContent>
+                    <KpiTag color={kpi_color(this.props.featured.kpi)}>
                         {this.props.featured.kpi}
-                    </QuestionKpi>
+                    </KpiTag>
                 </FeaturedQuestion>
             </React.Fragment>
         )    
@@ -90,10 +51,14 @@ class Topics extends Component {
 
 
     render () {
+        // Waiting for data to be fetched.
+        if (!this.props.featured) {
+            return ( <div>Loading...</div>)
+        }
         return (
             <ConnectWrapper title={this.state.appName}>
                 <Card>
-                    {this.renderFeaturedQuestion(this.props.featured)}
+                    {this.renderFeaturedQuestion(this.props.featured)}                    
                     <TopicsTab>
                         <Discover questions={this.props.questions} answers={this.props.answers} />
                         <Answer />
@@ -131,7 +96,7 @@ const mapStateToProps = (state) => {
 
 
 export default connect(mapStateToProps, {
-    fetchTopicQuestions,
-    fetchTopicAnswers
+    fetchTopicsQuestions,
+    fetchTopicsAnswers
 })(Topics);
 

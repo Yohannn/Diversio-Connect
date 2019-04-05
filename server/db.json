@@ -35,7 +35,7 @@
     "topics-questions" : [
         { 
             "id": 1,
-            "kpi": "RECRUITING AND HIRING", 
+            "kpi": "RECRUITING", 
             "title": "What is the best blind recruiting tool", 
             "body": "Bias in recruiting and hiring is challenge. There are several new tools on the market to fight this" },
         {   
@@ -189,7 +189,60 @@
             "body": "nisi vel quas ut laborum ratione rerum magni eum unde et voluptatem saepe voluptas corporis modi amet ipsam eos saepe porro"
         }
     ],
+    
     "resources": [],
-    "experts": []
+    "experts": [
+
+        { 
+            "id": 0, 
+            "name": "Cynthia Sunil", 
+            "position": "professional", 
+            "points": "10", 
+            "topics": ["culture", "networks", "bias"], 
+            "location": "Los Angeles",
+            "organization": ["BROADTHINK"], 
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus sollicitudin mollis. Orew, eget rhoncus augue interdum ac. Curabitur egestas" 
+        },
+        { 
+            "id": 1, 
+            "name": "Dunola Aurelia", 
+            "position": "professional", 
+            "points": "10", 
+            "topics": ["culture", "networks", "bias", "safety"], 
+            "location": "London", 
+            "organization": ["G(IRL)S20", "GOLDMAN SACHS"], 
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus sollicitudin mollis. Orew, eget rhoncus augue interdum ac. Curabitur egestas" 
+        },
+        { 
+            "id": 2, 
+            "name": "Alex McMurray", 
+            "position": "ambassador", 
+            "points": "8", 
+            "topics": ["culture", "leadership", "bias"], 
+            "location": "Calgary", 
+            "organization": ["FACET CONSULTING"], 
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus sollicitudin mollis. Orew, eget rhoncus augue interdum ac. Curabitur egestas" 
+        },
+        { 
+            "id": 3, 
+            "name": "Alexandra Sudomoeva", 
+            "position": "professional", 
+            "points": "10", 
+            "topics": ["bias", "recruiting"], 
+            "location": "New York", 
+            "organization": ["G(IRLS)20", "COLUMBIA UNIVERSITY"], 
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus sollicitudin mollis. Orew, eget rhoncus augue interdum ac. Curabitur egestas" 
+        },
+        { 
+            "id": 4, 
+            "name": "Joseph Stankevich", 
+            "position": "professional", 
+            "points": "20", 
+            "topics": ["bias", "leadership"], 
+            "location": "Toronto", 
+            "organization": ["UNIVERSITY OF TORONTO"], 
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tempus sollicitudin mollis. Orew, eget rhoncus augue interdum ac. Curabitur egestas" 
+        }
+    ]
 
 }

@@ -1,25 +1,31 @@
 import { 
-    FETCH_PILOT_PROJECTS, 
-    FETCH_PILOT_PROJECTS_SUCCESS, 
+    FETCH_PILOTS_PROJECTS, 
+    FETCH_PILOTS_PROJECTS_SUCCESS, 
 
-    FETCH_TOPIC_QUESTIONS, 
-    FETCH_TOPIC_QUESTIONS_SUCCESS,
-    FETCH_TOPIC_ANSWERS,
-    FETCH_TOPIC_ANSWERS_SUCCESS
+    FETCH_TOPICS_QUESTIONS, 
+    FETCH_TOPICS_QUESTIONS_SUCCESS,
+    FETCH_TOPICS_ANSWERS,
+    FETCH_TOPICS_ANSWERS_SUCCESS,
+
+    FETCH_RESOURCES_ARTICLES,
+    FETCH_RESOURCES_ARTICLES_SUCCESS,
+
+    FETCH_EXPERTS_PERSONNELS,
+    FETCH_EXPERTS_PERSONNELS_SUCCESS
 } from './types';
 
 // Connect
 
 // Pilots
-export const fetchPilotProjects = () => {
+export const fetchPilotsProjects = () => {
     return { 
-        type: FETCH_PILOT_PROJECTS
+        type: FETCH_PILOTS_PROJECTS
     };
 }
 
-export const fetchPilotProjectsSuccess = (projects) => {
+export const fetchPilotsProjectsSuccess = (projects) => {
     return {
-        type: FETCH_PILOT_PROJECTS_SUCCESS,
+        type: FETCH_PILOTS_PROJECTS_SUCCESS,
         payload: projects
         
     }
@@ -27,28 +33,61 @@ export const fetchPilotProjectsSuccess = (projects) => {
 
 
 // Topics
-export const fetchTopicQuestions = () => {
+export const fetchTopicsQuestions = () => {
     return {
-        type: FETCH_TOPIC_QUESTIONS
+        type: FETCH_TOPICS_QUESTIONS
     }
 }
 
-export const fetchTopicQuestionsSuccess = (questions) => {
+export const fetchTopicsQuestionsSuccess = (questions) => {
     return {
-        type: FETCH_TOPIC_QUESTIONS_SUCCESS,
+        type: FETCH_TOPICS_QUESTIONS_SUCCESS,
         payload: questions
     }
 }
 
-export const fetchTopicAnswers = () => {
+export const fetchTopicsAnswers = () => {
     return {
-        type: FETCH_TOPIC_ANSWERS
+        type: FETCH_TOPICS_ANSWERS
     }
 }
 
-export const fetchTopicAnswersSuccess = (Answers) => {
+export const fetchTopicsAnswersSuccess = (Answers) => {
     return {
-        type: FETCH_TOPIC_ANSWERS_SUCCESS,
+        type: FETCH_TOPICS_ANSWERS_SUCCESS,
         payload: Answers
     }
 }
+
+
+// Resources
+export const fetchResourcesArticles = () => {
+    return {
+        type: FETCH_RESOURCES_ARTICLES
+    }
+}
+
+export const fetchResourcesArticlesSuccess = (articles) => {
+    return {
+        type: FETCH_RESOURCES_ARTICLES_SUCCESS,
+        payload: articles
+    }
+}
+
+
+// Experts
+export const fetchExpertsPersonnels = () => {
+    return {
+        type: FETCH_EXPERTS_PERSONNELS
+    }
+}
+
+export const fetchExpertsPersonnelsSuccess = (personnels) => {
+    return {
+        type: FETCH_EXPERTS_PERSONNELS_SUCCESS,
+        payload: personnels
+    }
+}
+
+
+
