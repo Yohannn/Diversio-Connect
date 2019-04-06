@@ -43,7 +43,7 @@ const theme = createMuiTheme({
                   },
             },
         },
-    },
+    }
   });
 
 // Expert images:
@@ -334,11 +334,11 @@ class Experts extends Component {
             return <div>Loading...</div>;
         }
 
-        // if (this.state.displayingExperts.length === 0) {
-        //     return (
-        //         <div> No experts found! Please</div>
-        //     )
-        // }
+        if (this.state.displayingExperts.length === 0) {
+            return (
+                <div>Please make a selection.</div>
+            )
+        }
 
         return (
             <ExpertsContentContainer>       
