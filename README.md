@@ -4,7 +4,14 @@
 * Note:
 	* redux saga
 	* styling: styled-components. 	 
-* Please start server in  '/server' first to check the app by:
+
+* How to run:
+1. Please start server in  '/server'  to run the server with script:
+```
+npm start
+```
+
+2. cd to '/client' to run app with script:
 ```
 npm start
 ```
